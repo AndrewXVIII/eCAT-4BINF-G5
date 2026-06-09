@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.arvedi.view.gui.GuiController" spacing="12" alignment="TOP_CENTER" stylesheets="@styles.css">
+    <padding><Insets topRightBottomLeft="20"/></padding>
+
+    <Label text="Gestionale Cabine" styleClass="title"/>
+
+    <TabPane prefWidth="860" prefHeight="620">
+        <tabs>
+            <Tab text="Cabine">
+                <VBox spacing="12">
+                    <padding><Insets topRightBottomLeft="10"/></padding>
+                    <GridPane hgap="10" vgap="10">
+                        <Label text="Codice:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                        <TextField fx:id="txtCabinaCodice" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                        <Label text="Ubicazione:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                        <TextField fx:id="txtCabinaUbicazione" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                    </GridPane>
+                    <Button fx:id="btnAddCabina" text="Aggiungi Cabina" maxWidth="180"/>
+                    <Label text="Elenco Cabine:"/>
+                    <ListView fx:id="lstCabine" prefHeight="260"/>
+                </VBox>
+            </Tab>
+            <Tab text="Tecnici">
+                <VBox spacing="12">
+                    <padding><Insets topRightBottomLeft="10"/></padding>
+                    <GridPane hgap="10" vgap="10">
+                        <Label text="Nome:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                        <TextField fx:id="txtTecnicoNome" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                        <Label text="Cognome:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                        <TextField fx:id="txtTecnicoCognome" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                        <Label text="Azienda:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                        <TextField fx:id="txtTecnicoAzienda" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                    </GridPane>
+                    <Button fx:id="btnAddTecnico" text="Aggiungi Tecnico" maxWidth="180"/>
+                    <Label text="Elenco Tecnici:"/>
+                    <ListView fx:id="lstTecnici" prefHeight="240"/>
+                </VBox>
+            </Tab>
+            <Tab text="Interventi">
+                <VBox spacing="12">
+                    <padding><Insets topRightBottomLeft="10"/></padding>
+                    <GridPane hgap="10" vgap="10">
+                        <Label text="Cabina:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                        <ComboBox fx:id="cbInterventoCabina" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                        <Label text="Tecnico:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                        <ComboBox fx:id="cbInterventoTecnico" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                        <Label text="Priorita:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                        <ComboBox fx:id="cbPriorita" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                        <Label text="Esito:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                        <TextField fx:id="txtEsito" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                        <Label text="Note:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                        <TextArea fx:id="txtNote" GridPane.rowIndex="4" GridPane.columnIndex="1" prefRowCount="3"/>
+                    </GridPane>
+                    <Button fx:id="btnAddIntervento" text="Registra Intervento" maxWidth="220"/>
+                    <Button fx:id="btnUpdateIntervento" text="Aggiorna Intervento" maxWidth="220"/>
+                    <Button fx:id="btnExportInterventi" text="Esporta Interventi" maxWidth="220"/>
+                    <Label text="Elenco Interventi:"/>
+                    <ListView fx:id="lstInterventi" prefHeight="220"/>
+                </VBox>
+            </Tab>
+            <Tab text="Tipologie">
+                <VBox spacing="12">
+                    <padding><Insets topRightBottomLeft="10"/></padding>
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Descrizione:"/>
+                        <TextField fx:id="txtTipologia" prefWidth="360"/>
+                        <Button fx:id="btnAddTipologia" text="Aggiungi Tipologia"/>
+                    </HBox>
+                    <TableView fx:id="tableTipologie" prefHeight="420">
+                        <columns>
+                            <TableColumn fx:id="colTipologiaDescrizione" text="Descrizione" prefWidth="760"/>
+                        </columns>
+                    </TableView>
+                </VBox>
+            </Tab>
+            <Tab text="Quadri">
+                <VBox spacing="12">
+                    <padding><Insets topRightBottomLeft="10"/></padding>
+                    <GridPane hgap="10" vgap="10">
+                        <Label text="Codice:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                        <TextField fx:id="txtCodiceQuadro" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                        <Label text="Cabina:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                        <ComboBox fx:id="comboCabina" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                        <Label text="Tipologia:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                        <ComboBox fx:id="comboTipologia" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                    </GridPane>
+                    <Button fx:id="btnAddQuadro" text="Aggiungi Quadro" maxWidth="220"/>
+                    <TableView fx:id="tableQuadri" prefHeight="360">
+                        <columns>
+                            <TableColumn fx:id="colQuadroCodice" text="Codice" prefWidth="240"/>
+                            <TableColumn fx:id="colQuadroCabina" text="Cabina" prefWidth="260"/>
+                            <TableColumn fx:id="colQuadroTipologia" text="Tipologia" prefWidth="260"/>
+                        </columns>
+                    </TableView>
+                </VBox>
+            </Tab>
+            <Tab text="Controlli">
+                <VBox spacing="12">
+                    <padding><Insets topRightBottomLeft="10"/></padding>
+                    <GridPane hgap="10" vgap="10">
+                        <Label text="Descrizione:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                        <TextField fx:id="txtDescrizioneControllo" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                        <Label text="Tipologia:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                        <ComboBox fx:id="comboTipologiaControllo" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                    </GridPane>
+                    <Button fx:id="btnAddControllo" text="Aggiungi Controllo" maxWidth="220"/>
+                    <TableView fx:id="tableControlli" prefHeight="360">
+                        <columns>
+                            <TableColumn fx:id="colControlloDescrizione" text="Descrizione" prefWidth="380"/>
+                            <TableColumn fx:id="colControlloTipologia" text="Tipologia" prefWidth="380"/>
+                        </columns>
+                    </TableView>
+                </VBox>
+            </Tab>
+            <Tab text="Dashboard">
+                <VBox spacing="16" alignment="TOP_LEFT">
+                    <padding><Insets topRightBottomLeft="10"/></padding>
+                    <Label text="Dashboard" styleClass="title"/>
+                    <GridPane hgap="20" vgap="12">
+                        <Label text="Numero Cabine:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                        <Label fx:id="lblNumeroCabine" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                        <Label text="Numero Tecnici:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                        <Label fx:id="lblNumeroTecnici" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                        <Label text="Numero Quadri:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                        <Label fx:id="lblNumeroQuadri" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                        <Label text="Numero Interventi:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                        <Label fx:id="lblNumeroInterventi" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+                        <Label text="Interventi oggi:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                        <Label fx:id="lblInterventiOggi" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+                        <Label text="Interventi settimana:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+                        <Label fx:id="lblInterventiSettimana" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+                        <Label text="Interventi mese:" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+                        <Label fx:id="lblInterventiMese" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+                        <Label text="Cabina top interventi:" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+                        <Label fx:id="lblCabinaPiuInterventi" GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+                        <Label text="Tecnico top interventi:" GridPane.rowIndex="8" GridPane.columnIndex="0"/>
+                        <Label fx:id="lblTecnicoPiuInterventi" GridPane.rowIndex="8" GridPane.columnIndex="1"/>
+                    </GridPane>
+                </VBox>
+            </Tab>
+            <Tab text="Ricerca">
+                <VBox spacing="12">
+                    <padding><Insets topRightBottomLeft="10"/></padding>
+                    <GridPane hgap="10" vgap="10">
+                        <Label text="Tecnico:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                        <ComboBox fx:id="comboRicercaTecnico" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                        <Button fx:id="btnCercaPerTecnico" text="Cerca per tecnico" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+
+                        <Label text="Cabina:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                        <ComboBox fx:id="comboRicercaCabina" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                        <Button fx:id="btnCercaPerCabina" text="Cerca per cabina" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+
+                        <Label text="Data (YYYY-MM-DD):" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                        <TextField fx:id="txtRicercaData" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                        <Button fx:id="btnCercaPerData" text="Cerca per data" GridPane.rowIndex="2" GridPane.columnIndex="2"/>
+
+                        <Label text="Priorita:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                        <ComboBox fx:id="comboRicercaPriorita" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+                        <Button fx:id="btnCercaPerPrioritaTecnico" text="Cerca priorità+tecnico" GridPane.rowIndex="3" GridPane.columnIndex="2"/>
+
+                        <Label text="Tecnico + data:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                        <Button fx:id="btnCercaPerTecnicoData" text="Cerca tecnico+data" GridPane.rowIndex="4" GridPane.columnIndex="2"/>
+
+                        <Label text="Cabina + data:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+                        <Button fx:id="btnCercaPerCabinaData" text="Cerca cabina+data" GridPane.rowIndex="5" GridPane.columnIndex="2"/>
+                    </GridPane>
+                    <Label text="Risultati ricerca:"/>
+                    <ListView fx:id="lstRicercaRisultati" prefHeight="360"/>
+                </VBox>
+            </Tab>
+        </tabs>
+    </TabPane>
+
+    <Label fx:id="lblMessage" textFill="red"/>
+</VBox>

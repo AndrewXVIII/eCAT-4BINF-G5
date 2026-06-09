@@ -1,0 +1,66 @@
+##############################
+# Java / JVM
+##############################
+
+*.class
+*.log
+hs_err_pid*
+replay_pid*
+
+# BlueJ files
+*.ctxt
+
+# J2ME
+.mtj.tmp/
+
+##############################
+# Maven
+##############################
+
+# Maven output directory
+target/
+
+# Local Maven repositories (NEVER commit)
+.mvn/timing.properties
+
+##############################
+# Eclipse
+##############################
+
+# Eclipse project files (auto-generated)
+.project
+.classpath
+.settings/
+
+# Eclipse workspace metadata (sometimes appears accidentally)
+.idea/
+bin/
+
+##############################
+# JavaFX (optional temp files)
+##############################
+# Nothing special required — JavaFX uses normal Maven output
+# but if SceneBuilder creates temp files in the same folder:
+*.bak
+
+##############################
+# Archives / Packages
+##############################
+
+*.jar
+*.war
+*.ear
+*.nar
+*.zip
+*.tar.gz
+*.rar
+
+##############################
+# OS-specific (optional)
+##############################
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
