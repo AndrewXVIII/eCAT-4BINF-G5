@@ -7,7 +7,7 @@
       fx:controller="com.arvedi.view.gui.GuiController" spacing="12" alignment="TOP_CENTER" stylesheets="@styles.css">
     <padding><Insets topRightBottomLeft="20"/></padding>
 
-    <Label text="Gestionale Cabine" styleClass="title"/>
+    <Label text="Gestionale Cabine" styleClass="title" style="-fx-text-fill: white; -fx-font-weight: 700; -fx-font-size: 26px;"/>
 
     <TabPane prefWidth="860" prefHeight="620">
         <tabs>
